@@ -2,3 +2,18 @@ include: package:flutter_lints/flutter.yaml
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
+
+analyzer:
+  strong-mode:
+    implicit-dynamic: false
+  errors:
+    missing_required_param: warning
+    missing_return: warning
+    todo: ignore
+    import_of_legacy_library_into_null_safe: ignore
+  exclude:
+    - "bin/cache/**"
+    - "lib/i18n/stock_messages_*.dart"
+    - "lib/src/http/**"
+    - "**/*.g.dart"
+    - lib/dependencias/compressor_imagem/src/flutter_luban.dart

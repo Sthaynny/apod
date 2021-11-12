@@ -1,7 +1,8 @@
-name: micro_app_dependency
+name: micro_dependency
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
+publesh_to: none
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
