@@ -88,6 +88,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
+  micro_core:
+    dependency: "direct main"
+    description:
+      path: "../micro_core"
+      relative: true
+    source: path
+    version: "0.0.1"
+  micro_dependency:
+    dependency: "direct main"
+    description:
+      path: "../micro_dependency"
+      relative: true
+    source: path
+    version: "0.0.1"
   path:
     dependency: transitive
     description:

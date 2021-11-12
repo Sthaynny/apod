@@ -1,16 +1,36 @@
-import 'package:micro_core/app/micro_app.dart';
-import 'package:micro_dependency/micro_dependency.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import 'micro_core_utils.dart';
+import 'microapp.dart';
 
 abstract class BaseApp {
   List<MicroApp>? get microApps;
 
-  final List<NuRouter> routes = [];
+  Map<String, WidgetBuilderArgs>? get baseRoutes;
+
+  final Map<String, WidgetBuilderArgs> routes = {};
 
   void registerRouters() {
+    if (baseRoutes?.isNotEmpty ?? false) routes.addAll(baseRoutes!);
     if (microApps != null) {
-      for (MicroApp microApp in microApps!) {
-        routes.addAll(microApp.routes);
+      for (MicroApp microapp in microApps!) {
+        routes.addAll(microapp.routes);
       }
+    }
+  }
+
+  Route<dynamic>? generateRoute(RouteSettings settings) {
+    var routerName = settings.name;
+    var routerArgs = settings.arguments;
+
+    var navigateTo = routes[routerName];
+    if (navigateTo != null) {
+      return MaterialPageRoute(
+        builder: (context) => navigateTo.call(context, routerArgs),
+      );
+    } else {
+      return null;
     }
   }
 }

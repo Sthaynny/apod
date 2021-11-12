@@ -1,1 +1,1 @@
-export 'package:nuvigator/nuvigator.dart';
+export 'src/adaptable_screen/adaptable_screen.dart';
