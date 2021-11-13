@@ -18,9 +18,10 @@ class MyApp extends StatelessWidget with BaseApp {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       navigatorKey: navigatorKey,
       onGenerateRoute: super.generateRoute,
-      initialRoute: '/login',
+      initialRoute: Routes.home,
     );
   }
 

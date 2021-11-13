@@ -9,6 +9,8 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  data_connection_checker_tv: ^0.3.5-nullsafety
+  dio: ^4.0.1
   flutter:
     sdk: flutter
 
