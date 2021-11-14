@@ -3,8 +3,8 @@ import 'package:micro_dependency/src/network/response/states/apiError/api_error.
 import 'package:micro_dependency/src/network/response/states/internal_error.dart';
 import 'package:micro_dependency/src/network/response/states/no_internet.dart';
 
-class Erro extends ApiResult {
-  Erro({
+class RequestError extends ApiResult {
+  RequestError({
     required this.message,
     this.statusCode,
     this.code,
@@ -14,26 +14,25 @@ class Erro extends ApiResult {
   final String message;
   final String? code;
 
-  String get descricao => message;
   bool get hasStatusCode => code != null && code!.isNotEmpty;
   bool get errorNoInternet => statusCode == null;
 
-  static Erro construirErro(ApiResult result) {
+  static RequestError constructError(ApiResult result) {
     if (result is ApiError) {
-      return Erro(
+      return RequestError(
         message: result.error.message ?? '',
         statusCode: result.statusCode,
         code: result.error.code,
       );
     }
     if (result is NoInternet) {
-      return Erro(
+      return RequestError(
         message: "No Internet",
       );
     }
 
     final InternalError internalError = result as InternalError;
-    return Erro(
+    return RequestError(
       message: internalError.message,
       statusCode: internalError.statusCode,
     );

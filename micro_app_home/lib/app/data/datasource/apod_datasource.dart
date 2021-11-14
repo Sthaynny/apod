@@ -1,11 +1,9 @@
 import 'package:micro_dependency/micro_dependency.dart';
 
 class ApodDataSouce {
-  Future<ApiResult> getApod({
-    required Map<String, dynamic> body,
-  }) async {
+  Future<ApiResult> getApod() async {
     final Endpoint endpoint = Endpoint(
-      method: Post(),
+      method: Get(),
       path: '',
     );
     return await ApiManager.request(endpoint: endpoint);
