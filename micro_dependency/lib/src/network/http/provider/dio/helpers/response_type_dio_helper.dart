@@ -1,4 +1,5 @@
-import 'package:dio2/dio2.dart' as dio_response_type show ResponseType;
+import 'package:dio/dio.dart' as dio_response_type show ResponseType;
+import 'package:micro_dependency/src/network/endpoint/endpoint.dart';
 
 class ContentTypeDioResponse {
   final Map<ResponseType, dio_response_type.ResponseType> _map = {
@@ -8,7 +9,8 @@ class ContentTypeDioResponse {
     ResponseType.stream: dio_response_type.ResponseType.stream
   };
 
-  dio_response_type.ResponseType getDioResponseType(ResponseType responseType) {
+  dio_response_type.ResponseType? getDioResponseType(
+      ResponseType responseType) {
     return _map[responseType];
   }
 }

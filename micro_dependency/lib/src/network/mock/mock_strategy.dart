@@ -1,3 +1,3 @@
 abstract class MockStrategy {
-  String getNameJsonFile();
+  String? getNameJsonFile();
 }

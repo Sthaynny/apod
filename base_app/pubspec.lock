@@ -50,6 +50,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  data_connection_checker_tv:
+    dependency: transitive
+    description:
+      name: data_connection_checker_tv
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.5-nullsafety"
+  dio:
+    dependency: transitive
+    description:
+      name: dio
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -74,6 +88,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  http_parser:
+    dependency: transitive
+    description:
+      name: http_parser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
   lints:
     dependency: transitive
     description:
@@ -110,7 +131,7 @@ packages:
     source: path
     version: "0.0.1"
   micro_dependency:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../micro_dependency"
       relative: true

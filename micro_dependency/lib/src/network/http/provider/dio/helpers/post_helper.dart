@@ -17,7 +17,7 @@ class PostHelper implements RequestHelper {
         options: Options(
             headers: <String, dynamic>{
               ...httpProvider.options.headers,
-              ...endpoint.headers,
+              ...endpoint.headers ?? {},
             },
             contentType: _contentTypeUrlencoded(endpoint.headers)
                 ? Headers.formUrlEncodedContentType

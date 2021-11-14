@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:micro_app_home/app/micro_app_home_resolver.dart';
 import 'package:micro_core/micro_core.dart';
+import 'package:micro_dependency/micro_dependency.dart';
 
 void main() {
+  DioCreator.init(
+    baseUrl:
+        'api.nasa.gov/planetary/apod?api_key=Vn3OSccRqpoFtgzFEW6yTVAzJN7Ey2H7UXFgeyJ0',
+  );
   runApp(MyApp());
 }
 

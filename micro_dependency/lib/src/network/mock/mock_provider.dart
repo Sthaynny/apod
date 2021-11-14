@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:micro_dependency/src/network/endpoint/endpoint.dart';
 import 'package:micro_dependency/src/network/http/obsevers/network_error_observable/network_error_observable.dart';
 import 'package:micro_dependency/src/network/http/obsevers/network_error_observable/network_error_type.dart';
@@ -17,7 +19,7 @@ class MockProvider {
       );
 
   NetworkResponse _buildResponseError({
-    required Map<String, dynamic> data,
+    Map<String, dynamic>? data,
   }) =>
       NetworkResponse(
         data: data,
@@ -38,8 +40,9 @@ class MockProvider {
     );
 
     NetworkResponse response;
-    if (jsonResponse == null) {
-      response = _buildResponseError(data: jsonResponse);
+    final number = Random(1);
+    if (number.nextBool()) {
+      response = _buildResponseError();
     } else {
       response = _buildResponse(data: jsonResponse);
     }

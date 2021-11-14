@@ -3,5 +3,5 @@ import 'package:micro_dependency/src/network/http/intercerptors/retry_intercepto
 abstract class IRotasComRetry {
   bool get isVazio;
   int get quantidade;
-  PoliticaRetry getPolitica(String urlPath);
+  PoliticaRetry? getPolitica(String urlPath);
 }

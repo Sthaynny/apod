@@ -18,7 +18,7 @@ class GetHelper implements RequestHelper {
       options: Options(
         headers: <String, dynamic>{
           ...httpProvider.options.headers,
-          ...endpoint.headers,
+          ...endpoint.headers ?? {},
         },
         responseType:
             _contentTypeHelper.getDioResponseType(endpoint.responseType),

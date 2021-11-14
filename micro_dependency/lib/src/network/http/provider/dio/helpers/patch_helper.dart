@@ -18,7 +18,7 @@ class PatchHelper implements RequestHelper {
             options: Options(
               headers: <String, dynamic>{
                 ...httpProvider.options.headers,
-                ...endpoint.headers ?? <String, dynamic>{},
+                ...endpoint.headers ?? {},
               },
               responseType:
                   _contentTypeHelper.getDioResponseType(endpoint.responseType),

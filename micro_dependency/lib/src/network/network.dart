@@ -1,5 +1,8 @@
 export 'package:dio/dio.dart';
 
+export 'http/creators/dio_creator.dart';
+export 'http/http_config.dart';
+export 'manager/api_manager.dart';
 export 'methods/delete.dart';
 export 'methods/get.dart';
 export 'methods/http_method.dart';
