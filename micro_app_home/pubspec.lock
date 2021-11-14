@@ -51,7 +51,7 @@ packages:
     source: hosted
     version: "1.15.0"
   dartz:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: dartz
       url: "https://pub.dartlang.org"

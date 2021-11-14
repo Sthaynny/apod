@@ -9,12 +9,14 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  dartz: ^0.10.0
   flutter:
     sdk: flutter
   micro_core:
     path: ../micro_core
   micro_dependency:
     path: ../micro_dependency
+  
 
 dev_dependencies:
   flutter_test:
