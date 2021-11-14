@@ -13,7 +13,7 @@ class ApodRepositoryImp implements ApodRepository {
 
     if (result is Success) {
       return Right(
-        ApodModel.fromJson(result.data),
+        ApodModel.fromMap(result.data),
       );
     }
 
