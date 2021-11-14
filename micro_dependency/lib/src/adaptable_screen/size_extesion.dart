@@ -6,4 +6,5 @@ extension AdaptableScreen on num {
   double get sp => AdaptableScreenUtils._instance.setFont(toDouble());
   double get ssp =>
       AdaptableScreenUtils._instance.setFont(toDouble(), autoScale: true);
+  double get r => AdaptableScreenUtils._instance.radius(toDouble());
 }

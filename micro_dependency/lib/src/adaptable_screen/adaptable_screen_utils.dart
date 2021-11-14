@@ -46,6 +46,8 @@ class AdaptableScreenUtils {
     return max(height, width);
   }
 
+  double radius(double radius) => radius * lengthMin;
+
   get lengthMin {
     return min(height, width);
   }
@@ -64,12 +66,4 @@ class AdaptableScreenUtils {
     }
     return (fontSize * textScale) / factorTextScaleRealDevice;
   }
-}
-
-extension AdaptableScreen on num {
-  double get h => AdaptableScreenUtils._instance.steppedHeight(toDouble());
-  double get w => AdaptableScreenUtils._instance.steppedWidth(toDouble());
-  double get sp => AdaptableScreenUtils._instance.setFont(toDouble());
-  double get ssp =>
-      AdaptableScreenUtils._instance.setFont(toDouble(), autoScale: true);
 }

@@ -32,7 +32,7 @@ class MockProvider {
     final isConnected = await connectionChecker.isConnected();
     if (!isConnected) {
       NetworkErrorObserver.instance
-          .criarNotificacao(errorType: NetworkErrorType.noConnection);
+          .createNotification(errorType: NetworkErrorType.noConnection);
       await connectionChecker.handleRetryWhenInternetBack();
     }
 

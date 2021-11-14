@@ -5,8 +5,10 @@ import 'package:micro_dependency/micro_dependency.dart';
 
 part 'home_state.dart';
 
-class HomeCubit extends Cubit<HomeState> {
-  HomeCubit(this._usercase) : super(HomeInitial());
+class HomeCubit extends Cubit<HomeState> implements NetworkErrorObservable {
+  HomeCubit(this._usercase) : super(HomeInitial()) {
+    NetworkErrorObserver.instance.addListener(listener: this);
+  }
   final GetApodUsercase _usercase;
 
   Future getApodDetails() async {
@@ -24,5 +26,12 @@ class HomeCubit extends Cubit<HomeState> {
         emit(HomeLoaded(apod));
       },
     );
+  }
+
+  @override
+  void onNetworkError(NetworkErrorType errorType) {
+    if (errorType == NetworkErrorType.noConnection) {
+      emit(HomeError());
+    }
   }
 }

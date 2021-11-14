@@ -7,7 +7,7 @@ import 'package:micro_dependency/micro_dependency.dart';
 void main() {
   DioCreator.init(
     baseUrl:
-        'api.nasa.gov/planetary/apod?api_key=Vn3OSccRqpoFtgzFEW6yTVAzJN7Ey2H7UXFgeyJ0',
+        'https://api.nasa.gov/planetary/apod?api_key=Vn3OSccRqpoFtgzFEW6yTVAzJN7Ey2H7UXFgeyJ0',
   );
   runApp(MyApp());
 }
@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget with BaseApp {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
+        scaffoldBackgroundColor: Colors.black87,
       ),
       debugShowCheckedModeBanner: false,
       navigatorKey: navigatorKey,

@@ -24,12 +24,12 @@ class CheckConnectionInterceptor extends Interceptor {
       if (err.error is SocketException) {
         if (!await connectionChecker.isConnected()) {
           NetworkErrorObserver.instance
-              .criarNotificacao(errorType: NetworkErrorType.noConnection);
+              .createNotification(errorType: NetworkErrorType.noConnection);
         }
       }
       if (err.response?.statusCode == 404) {
         NetworkErrorObserver.instance
-            .criarNotificacao(errorType: NetworkErrorType.notfound);
+            .createNotification(errorType: NetworkErrorType.notfound);
       }
     }
 
@@ -44,7 +44,7 @@ class CheckConnectionInterceptor extends Interceptor {
     final isConnected = await connectionChecker.isConnected();
     if (!isConnected) {
       NetworkErrorObserver.instance
-          .criarNotificacao(errorType: NetworkErrorType.noConnection);
+          .createNotification(errorType: NetworkErrorType.noConnection);
       await connectionChecker.handleRetryWhenInternetBack();
     }
     handler.next(options);

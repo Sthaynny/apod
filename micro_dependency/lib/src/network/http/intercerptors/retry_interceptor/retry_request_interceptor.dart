@@ -65,11 +65,11 @@ class RetryRequestInterceptor extends Interceptor {
   void _notifyMaxRetries(DioError error) {
     if (_mapStatusCodeToNetworkErrorType
         .containsKey(error.response?.statusCode)) {
-      NetworkErrorObserver.instance.criarNotificacao(
+      NetworkErrorObserver.instance.createNotification(
           errorType:
               _mapStatusCodeToNetworkErrorType[error.response?.statusCode]);
     } else if (_mapDioErrorTypeToNetworkError.containsKey(error.type)) {
-      NetworkErrorObserver.instance.criarNotificacao(
+      NetworkErrorObserver.instance.createNotification(
           errorType: _mapDioErrorTypeToNetworkError[error.type]);
     }
   }

@@ -8,7 +8,7 @@ abstract class NetworkErrorObservable {
 
 class NetworkErrorObserver {
   NetworkErrorObserver._internal() {
-    _inicializarStream();
+    _initStream();
   }
 
   static final NetworkErrorObserver instance = NetworkErrorObserver._internal();
@@ -18,7 +18,7 @@ class NetworkErrorObserver {
 
   final List<NetworkErrorObservable> _listeners = [];
 
-  void adicionarListener({required NetworkErrorObservable listener}) {
+  void addListener({required NetworkErrorObservable listener}) {
     if (_listeners.contains(listener)) {
       return;
     }
@@ -26,24 +26,24 @@ class NetworkErrorObserver {
     _listeners.add(listener);
   }
 
-  void removerListener({required NetworkErrorObservable listener}) {
+  void removeListener({required NetworkErrorObservable listener}) {
     if (_listeners.contains(listener)) {
       _listeners.remove(listener);
     }
   }
 
-  void removerListeners() {
+  void removeListeners() {
     _listeners.clear();
   }
 
-  void criarNotificacao({NetworkErrorType? errorType}) {
+  void createNotification({NetworkErrorType? errorType}) {
     if (errorType == null || _networkStream.isClosed) {
       return;
     }
     _networkStream.add(errorType);
   }
 
-  void _inicializarStream() {
+  void _initStream() {
     _networkStream.stream.listen((final NetworkErrorType errorType) {
       for (final NetworkErrorObservable listener in _listeners) {
         listener.onNetworkError(errorType);
@@ -53,6 +53,6 @@ class NetworkErrorObserver {
 
   void dispose() {
     _networkStream.close();
-    removerListeners();
+    removeListeners();
   }
 }
