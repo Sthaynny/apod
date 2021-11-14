@@ -1,4 +1,4 @@
-class ApodEntity {
+abstract class ApodEntity {
   ApodEntity({
     required this.copyright,
     required this.date,
