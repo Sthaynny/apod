@@ -19,7 +19,11 @@ class MicroAppHomeInjection implements IInjectionContainer {
       () => GetApodUsercase(dependency()),
     );
     dependency.registerFactory(
-      () => HomeCubit(dependency()),
+      () => HomeCubit(
+        getApodUsercase: dependency(),
+        saveLocalUsercase: dependency(),
+        getLocalUsercase: dependency(),
+      ),
     );
   }
 }

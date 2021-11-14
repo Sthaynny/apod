@@ -6,14 +6,23 @@ import 'package:micro_dependency/micro_dependency.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> implements NetworkErrorObservable {
-  HomeCubit(this._usercase) : super(HomeInitial()) {
+  HomeCubit({
+    required GetApodUsercase getApodUsercase,
+    required SaveLocalUsercase saveLocalUsercase,
+    required GetLocalUsercase getLocalUsercase,
+  })  : _getApodUsercase = getApodUsercase,
+        _saveLocalUsercase = saveLocalUsercase,
+        _getLocalUsercase = getLocalUsercase,
+        super(HomeInitial()) {
     NetworkErrorObserver.instance.addListener(listener: this);
   }
-  final GetApodUsercase _usercase;
+  final GetApodUsercase _getApodUsercase;
+  final SaveLocalUsercase _saveLocalUsercase;
+  final GetLocalUsercase _getLocalUsercase;
 
   Future getApodDetails() async {
     emit(HomeLoading());
-    final result = await _usercase();
+    final result = await _getApodUsercase();
     if (result == null) {
       emit(HomeError());
       return;
@@ -22,10 +31,21 @@ class HomeCubit extends Cubit<HomeState> implements NetworkErrorObservable {
       (error) {
         emit(HomeError());
       },
-      (apod) {
+      (apod) async {
+        await _saveLocalUsercase(apod);
         emit(HomeLoaded(apod));
       },
     );
+  }
+
+  Future<void> getLocalApod() async {
+    emit(HomeLoading());
+    final result = await _getLocalUsercase();
+    if (result == null) {
+      emit(HomeError());
+      return;
+    }
+    emit(HomeLoaded(result));
   }
 
   @override
