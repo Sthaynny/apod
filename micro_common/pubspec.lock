@@ -157,7 +157,7 @@ packages:
     source: path
     version: "0.0.1"
   micro_dependency:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../micro_dependency"
       relative: true

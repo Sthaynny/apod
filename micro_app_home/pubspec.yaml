@@ -16,6 +16,8 @@ dependencies:
     path: ../micro_core
   micro_dependency:
     path: ../micro_dependency
+  micro_common:
+    path: ../micro_common
   
 
 dev_dependencies:
