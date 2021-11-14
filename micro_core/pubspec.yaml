@@ -2,7 +2,7 @@ name: micro_core
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
-publish_to: false
+publish_to: none
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -11,6 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  micro_dependency:
+    path: ../micro_dependency
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,4 @@
-export 'package:dio/dio.dart';
-
+export 'endpoint/endpoint.dart';
 export 'http/creators/dio_creator.dart';
 export 'http/http_config.dart';
 export 'manager/api_manager.dart';

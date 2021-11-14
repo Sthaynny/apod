@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:dio/dio.dart';
 import 'package:micro_dependency/src/network/endpoint/endpoint.dart';
 import 'package:micro_dependency/src/network/http/obsevers/network_error_observable/network_error_observable.dart';
 import 'package:micro_dependency/src/network/http/obsevers/network_error_observable/network_error_type.dart';
