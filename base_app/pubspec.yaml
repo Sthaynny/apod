@@ -35,6 +35,8 @@ dependencies:
     path: ../micro_app_home
   micro_dependency:
     path: ../micro_dependency
+  micro_common:
+    path: ../micro_common
 
 
   # The following adds the Cupertino Icons font to your application.

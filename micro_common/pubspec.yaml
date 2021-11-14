@@ -2,7 +2,7 @@ name: micro_common
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
-publesh_to: none
+publish_to: none
 
 
 environment:
@@ -12,6 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  micro_core:
+    path: ../micro_core
 
 dev_dependencies:
   flutter_test:
