@@ -7,7 +7,10 @@ import 'package:micro_core/app/router/routes_app.dart';
 import 'package:micro_dependency/micro_dependency.dart';
 
 class ApodInfoWidget extends StatelessWidget {
-  const ApodInfoWidget({Key? key, required this.apodEntity}) : super(key: key);
+  const ApodInfoWidget({
+    Key? key,
+    required this.apodEntity,
+  }) : super(key: key);
 
   final ApodEntity apodEntity;
   @override
@@ -25,15 +28,16 @@ class ApodInfoWidget extends StatelessWidget {
             SizedBox(
               height: 16.h,
             ),
-            // SizedBox.expand(
             CachedNetworkImage(
               imageUrl: apodEntity.hdurl,
               fit: BoxFit.cover,
               placeholder: (context, url) => ImageShimmerWidget(
                 height: 500.h,
               ),
+              errorWidget: (context, url, error) => DefaultErrorWidget(
+                height: 500.h,
+              ),
             ),
-            // ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 24.h),
               child: Text.rich(

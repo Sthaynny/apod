@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:micro_common/app/domain/entity/apod_entity.dart';
+import 'package:micro_common/app/presentation/image_shimmer_widget.dart';
 import 'package:micro_dependency/micro_dependency.dart';
 
 class DetailsScreen extends StatefulWidget {
@@ -27,7 +28,13 @@ class _DetailsScreenState extends State<DetailsScreen> {
               SizedBox(
                 height: 16.h,
               ),
-              Image.network(apod.hdurl),
+              CachedNetworkImage(
+                imageUrl: apod.hdurl,
+                fit: BoxFit.cover,
+                placeholder: (context, url) => ImageShimmerWidget(
+                  height: 500.h,
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 24.h),
                 child: Text(
