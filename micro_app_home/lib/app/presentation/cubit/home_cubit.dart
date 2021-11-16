@@ -51,7 +51,7 @@ class HomeCubit extends Cubit<HomeState> implements NetworkErrorObservable {
   @override
   void onNetworkError(NetworkErrorType errorType) {
     if (errorType == NetworkErrorType.noConnection) {
-      emit(HomeError());
+      getLocalApod();
     }
   }
 }
