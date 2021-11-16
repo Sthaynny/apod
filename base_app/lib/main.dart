@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget with BaseApp {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Astronomy Picture of the Day',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
         scaffoldBackgroundColor: Colors.black87,
