@@ -3,6 +3,7 @@ import 'package:micro_common/app/domain/entity/apod_entity.dart';
 import 'package:micro_core/app/injenction_container.dart';
 import 'package:micro_core/app/micro_core_utils.dart';
 import 'package:micro_core/app/microapp.dart';
+import 'package:micro_core/app/router/routes_app.dart';
 
 class MicroAppDetailsResolver implements MicroApp {
   @override
@@ -13,6 +14,7 @@ class MicroAppDetailsResolver implements MicroApp {
 
   @override
   Map<String, WidgetBuilderArgs> get routes => {
-        '/details': (context, args) => DetailsScreen(apod: args as ApodEntity),
+        Routes.details: (context, args) =>
+            DetailsScreen(apod: args as ApodEntity),
       };
 }

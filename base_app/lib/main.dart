@@ -1,5 +1,6 @@
 import 'package:base_app/injection_container.dart';
 import 'package:flutter/material.dart';
+import 'package:micro_app_details/app/micro_app_details_resolver.dart';
 import 'package:micro_app_home/app/micro_app_home_resolver.dart';
 import 'package:micro_common/app/micro_common_resolver.dart';
 import 'package:micro_core/micro_core.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget with BaseApp {
   @override
   List<MicroApp> get microApps => [
         MicroAppHomeResolver(),
+        MicroAppDetailsResolver(),
         MicroCommonResolver(),
       ];
 }

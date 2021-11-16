@@ -33,6 +33,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 child: Text(
                   apod.explanation,
                   style: AppStyle.regular(),
+                  textAlign: TextAlign.justify,
                 ),
               ),
               Padding(
