@@ -7,5 +7,5 @@ abstract class MicroApp {
 
   Map<String, WidgetBuilderArgs> get routes;
 
-  IInjectionContainer get injection;
+  IInjectionContainer? get injection;
 }

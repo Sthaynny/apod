@@ -1,4 +1,4 @@
-name: micro_dependency
+name: micro_app_details
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
@@ -9,15 +9,14 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  dartz: ^0.10.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^7.3.3
-  get_it: ^7.2.0
-  shared_preferences: ^2.0.8
-  network:
-    git:
-      url: git@github.com:isthaynny/network.git
+  micro_core:
+    path: ../micro_core
+  micro_dependency:
+    path: ../micro_dependency
+  micro_common:
+    path: ../micro_common
 
 dev_dependencies:
   flutter_test:

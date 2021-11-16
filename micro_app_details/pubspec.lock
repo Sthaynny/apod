@@ -51,7 +51,7 @@ packages:
     source: hosted
     version: "1.15.0"
   dartz:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dartz
       url: "https://pub.dartlang.org"
@@ -104,13 +104,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "7.3.3"
-  flutter_lints:
-    dependency: "direct dev"
-    description:
-      name: flutter_lints
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.4"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -142,13 +135,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.3"
-  lints:
-    dependency: transitive
-    description:
-      name: lints
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.1"
   matcher:
     dependency: transitive
     description:
@@ -191,15 +177,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-  network:
-    dependency: transitive
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "7a1ca64500ac08454746f17803cb5a1ad3edb85b"
-      url: "git@github.com:isthaynny/network.git"
-    source: git
-    version: "0.0.1"
   path:
     dependency: transitive
     description:
@@ -213,7 +190,7 @@ packages:
       name: path_provider_linux
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.2"
   path_provider_platform_interface:
     dependency: transitive
     description:

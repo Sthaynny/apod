@@ -1,7 +1,4 @@
-import 'package:micro_dependency/src/network/response/api_result.dart';
-import 'package:micro_dependency/src/network/response/states/apiError/api_error.dart';
-import 'package:micro_dependency/src/network/response/states/internal_error.dart';
-import 'package:micro_dependency/src/network/response/states/no_internet.dart';
+import 'package:network/network.dart';
 
 class RequestError extends ApiResult {
   RequestError({

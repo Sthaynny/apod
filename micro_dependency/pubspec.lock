@@ -58,14 +58,14 @@ packages:
     source: hosted
     version: "0.10.0"
   data_connection_checker_tv:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: data_connection_checker_tv
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.5-nullsafety"
   dio:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dio
       url: "https://pub.dartlang.org"
@@ -156,6 +156,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  network:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "26a632b59795ed85d3bfe853a85f3a44b87dbec0"
+      url: "git@github.com:isthaynny/network.git"
+    source: git
+    version: "0.0.1"
   path:
     dependency: transitive
     description:
