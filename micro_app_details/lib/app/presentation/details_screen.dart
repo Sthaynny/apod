@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:micro_common/app/domain/entity/apod_entity.dart';
-import 'package:micro_common/app/presentation/image_shimmer_widget.dart';
+import 'package:micro_common/micro_common.dart';
 import 'package:micro_dependency/micro_dependency.dart';
 
 class DetailsScreen extends StatefulWidget {
   DetailsScreen({Key? key, required this.apod}) : super(key: key);
-  final ApodEntity apod;
+  final EventDatails apod;
 
   @override
   _DetailsScreenState createState() => _DetailsScreenState();
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-  ApodEntity get apod => widget.apod;
+  EventDatails get apod => widget.apod;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

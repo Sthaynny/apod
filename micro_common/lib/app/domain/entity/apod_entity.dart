@@ -1,5 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:micro_common/app/events/event_details.dart';
+
 class ApodEntity {
-  String copyright;
+  String? copyright;
   String date;
   String explanation;
   String hdurl;
@@ -7,7 +10,7 @@ class ApodEntity {
   String title;
   String? url;
   ApodEntity({
-    required this.copyright,
+    this.copyright,
     required this.date,
     required this.explanation,
     required this.hdurl,
@@ -33,6 +36,19 @@ class ApodEntity {
       mediaType: mediaType ?? this.mediaType,
       title: title ?? this.title,
       url: url ?? this.url,
+    );
+  }
+
+  EventDatails eventDatails(BuildContext context) {
+    return EventDatails(
+      context: context,
+      copyright: copyright,
+      date: date,
+      explanation: explanation,
+      hdurl: hdurl,
+      mediaType: mediaType,
+      title: title,
+      url: url,
     );
   }
 }

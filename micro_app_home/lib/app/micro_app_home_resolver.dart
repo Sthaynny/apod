@@ -14,4 +14,7 @@ class MicroAppHomeResolver implements MicroApp {
 
   @override
   IInjectionContainer get injection => MicroAppHomeInjection();
+
+  @override
+  void Function() get createListener => () {};
 }

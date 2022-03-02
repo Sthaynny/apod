@@ -12,4 +12,7 @@ class MicroCommonResolver implements MicroApp {
 
   @override
   Map<String, WidgetBuilderArgs> get routes => {};
+
+  @override
+  void Function() get createListener => (){};
 }

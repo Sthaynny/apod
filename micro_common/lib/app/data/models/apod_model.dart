@@ -4,7 +4,7 @@ import 'package:micro_common/app/domain/entity/apod_entity.dart';
 
 class ApodModel extends ApodEntity {
   ApodModel({
-    required String copyright,
+     String? copyright,
     required String date,
     required String explanation,
     required String hdurl,

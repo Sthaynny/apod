@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'micro_core_utils.dart';
 import 'microapp.dart';
 
 abstract class BaseApp {
-  List<MicroApp>? get microApps;
+  List<MicroApp> get microApps;
 
   Map<String, WidgetBuilderArgs>? get baseRoutes;
 
@@ -13,9 +12,17 @@ abstract class BaseApp {
 
   void registerRouters() {
     if (baseRoutes?.isNotEmpty ?? false) routes.addAll(baseRoutes!);
-    if (microApps != null) {
-      for (MicroApp microapp in microApps!) {
+    if (microApps.isNotEmpty) {
+      for (MicroApp microapp in microApps) {
         routes.addAll(microapp.routes);
+      }
+    }
+  }
+
+  void registerListener() {
+    if (microApps.isNotEmpty) {
+      for (MicroApp microApp in microApps) {
+        microApp.createListener();
       }
     }
   }
