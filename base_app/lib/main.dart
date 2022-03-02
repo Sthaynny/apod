@@ -8,8 +8,10 @@ import 'package:micro_dependency/micro_dependency.dart';
 
 void main() {
   DioCreator.init(
-    baseUrl:
-        'https://api.nasa.gov/planetary/apod?api_key=Vn3OSccRqpoFtgzFEW6yTVAzJN7Ey2H7UXFgeyJ0',
+    baseUrl: 'https://api.nasa.gov/planetary/apod',
+    queryParameters: <String, dynamic>{
+      'api_key': 'Vn3OSccRqpoFtgzFEW6yTVAzJN7Ey2H7UXFgeyJ0',
+    },
   );
   runApp(MyApp());
 }
