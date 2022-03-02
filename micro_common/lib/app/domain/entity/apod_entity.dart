@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:micro_common/app/events/event_details.dart';
 
 class ApodEntity {
@@ -39,9 +38,8 @@ class ApodEntity {
     );
   }
 
-  EventDatails eventDatails(BuildContext context) {
+  EventDatails get eventDatails {
     return EventDatails(
-      context: context,
       copyright: copyright,
       date: date,
       explanation: explanation,

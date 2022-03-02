@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget with BaseApp {
         scaffoldBackgroundColor: Colors.black87,
       ),
       debugShowCheckedModeBanner: false,
-      navigatorKey: navigatorKey,
+      navigatorKey: navigationKey,
       onGenerateRoute: super.generateRoute,
       initialRoute: Routes.home,
     );

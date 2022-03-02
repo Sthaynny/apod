@@ -1,8 +1,6 @@
 import 'package:event_bus/event_bus.dart';
-import 'package:flutter/material.dart';
 
 class EventDatails extends IEventBus {
-  BuildContext context;
   String? copyright;
   String date;
   String explanation;
@@ -12,7 +10,6 @@ class EventDatails extends IEventBus {
   String? url;
 
   EventDatails({
-    required this.context,
     this.copyright,
     required this.date,
     required this.explanation,

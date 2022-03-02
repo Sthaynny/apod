@@ -56,7 +56,7 @@ class ApodInfoWidget extends StatelessWidget {
             CupertinoButton(
               padding: EdgeInsets.zero,
               onPressed: () {
-                EventBus.emit(apodEntity.eventDatails(context));
+                EventBus.emit(apodEntity.eventDatails);
               },
               child: Container(
                 height: 40.h,

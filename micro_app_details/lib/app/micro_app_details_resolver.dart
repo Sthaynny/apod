@@ -1,5 +1,4 @@
 import 'package:event_bus/event_bus.dart';
-import 'package:flutter/material.dart';
 import 'package:micro_app_details/app/presentation/details_screen.dart';
 import 'package:micro_common/micro_common.dart';
 import 'package:micro_core/app/injenction_container.dart';
@@ -25,7 +24,7 @@ class MicroAppDetailsResolver implements MicroApp {
         EventBus.listen(
           (event) {
             if (event is EventDatails) {
-              Navigator.of(event.context).pushNamed(
+              navigationKey.currentState?.pushNamed(
                 Routes.details,
                 arguments: event,
               );
