@@ -98,7 +98,7 @@ packages:
       name: dio
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.1"
+    version: "4.0.4"
   fake_async:
     dependency: transitive
     description:
@@ -210,8 +210,8 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "26a632b59795ed85d3bfe853a85f3a44b87dbec0"
-      url: "git@github.com:isthaynny/network.git"
+      resolved-ref: "873d4774ceef31ea174229bbb1d564bda3946965"
+      url: "https://github.com/isthaynny/network.git"
     source: git
     version: "0.0.1"
   octo_image:

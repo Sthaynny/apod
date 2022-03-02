@@ -58,6 +58,7 @@ class ApodInfoWidget extends StatelessWidget {
             CupertinoButton(
               padding: EdgeInsets.zero,
               onPressed: () {
+                
                 Navigator.of(context).pushNamed(
                   Routes.details,
                   arguments: apodEntity,
