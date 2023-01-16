@@ -5,8 +5,8 @@ homepage:
 publish_to: none
 
 environment:
-  sdk: ">=2.14.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.18.0 <3.0.0"
+  flutter: ">=2.17.0"
 
 dependencies:
   cached_network_image: ^3.0.0
@@ -14,12 +14,10 @@ dependencies:
   dartz: ^0.10.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^7.3.3
+  flutter_bloc: ^8.1.1
   get_it: ^7.2.0
   shared_preferences: ^2.0.8
-  network:
-    git:
-      url: git@github.com:isthaynny/network.git
+  pop_network: ^0.0.13
 
 dev_dependencies:
   flutter_test:
