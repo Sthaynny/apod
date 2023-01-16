@@ -1,7 +1,7 @@
-import 'package:event_bus/event_bus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:micro_common/micro_common.dart';
+import 'package:micro_core/app/router/routes_app.dart';
 import 'package:micro_dependency/micro_dependency.dart';
 
 class ApodInfoWidget extends StatelessWidget {
@@ -15,7 +15,7 @@ class ApodInfoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.all(16.w),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -23,21 +23,21 @@ class ApodInfoWidget extends StatelessWidget {
               apodEntity.title,
               style: AppStyle.h2(),
             ),
-            SizedBox(
-              height: 16.h,
+            const SizedBox(
+              height: 16,
             ),
             CachedNetworkImage(
               imageUrl: apodEntity.hdurl,
               fit: BoxFit.cover,
-              placeholder: (context, url) => ImageShimmerWidget(
-                height: 500.h,
+              placeholder: (context, url) => const ImageShimmerWidget(
+                height: 500,
               ),
               errorWidget: (context, url, error) => DefaultErrorWidget(
-                height: 500.h,
+                height: 500,
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 24.h),
+              padding: const EdgeInsets.symmetric(vertical: 24),
               child: Text.rich(
                 TextSpan(
                   text: 'Date: ',
@@ -56,13 +56,16 @@ class ApodInfoWidget extends StatelessWidget {
             CupertinoButton(
               padding: EdgeInsets.zero,
               onPressed: () {
-                EventBus.emit(apodEntity.eventDatails);
+                Navigator.of(context).pushNamed(
+                  Routes.details,
+                  arguments: apodEntity,
+                );
               },
               child: Container(
-                height: 40.h,
+                height: 40,
                 decoration: BoxDecoration(
                   color: Colors.grey,
-                  borderRadius: BorderRadius.circular(15.r),
+                  borderRadius: BorderRadius.circular(15),
                 ),
                 alignment: Alignment.center,
                 child: Text(

@@ -20,22 +20,22 @@ class _DetailsScreenState extends State<DetailsScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.w),
+          padding: EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 16.h,
+                height: 16,
               ),
               CachedNetworkImage(
                 imageUrl: apod.hdurl,
                 fit: BoxFit.cover,
                 placeholder: (context, url) => ImageShimmerWidget(
-                  height: 500.h,
+                  height: 500,
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 24.h),
+                padding: EdgeInsets.symmetric(vertical: 24),
                 child: Text(
                   apod.explanation,
                   style: AppStyle.regular(),
@@ -43,7 +43,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 24.h),
+                padding: EdgeInsets.symmetric(vertical: 24),
                 child: Text.rich(
                   TextSpan(
                     text: 'Date: ',

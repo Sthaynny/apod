@@ -1,4 +1,4 @@
-import 'package:network/network.dart';
+import 'package:pop_network/pop_network.dart';
 
 class RequestError extends ApiResult {
   RequestError({
@@ -17,9 +17,9 @@ class RequestError extends ApiResult {
   static RequestError constructError(ApiResult result) {
     if (result is ApiError) {
       return RequestError(
-        message: result.error.message ?? '',
+        message: result.data.message ?? '',
         statusCode: result.statusCode,
-        code: result.error.code,
+        code: result.statusCode.toString(),
       );
     }
     if (result is NoInternet) {
