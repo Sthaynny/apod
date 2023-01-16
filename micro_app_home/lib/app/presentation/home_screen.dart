@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:micro_app_home/app/presentation/components/apod_info.dart';
 import 'package:micro_app_home/app/presentation/components/home_erro.dart';
