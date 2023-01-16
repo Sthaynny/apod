@@ -1,3 +1,7 @@
+import 'dart:async';
+
+import 'package:event_bus/event_bus.dart';
+import 'package:flutter/material.dart';
 import 'package:micro_app_home/app/micro_app_home_injection.dart';
 import 'package:micro_app_home/app/presentation/home_screen.dart';
 import 'package:micro_core/app/injenction_container.dart';
@@ -16,5 +20,6 @@ class MicroAppHomeResolver implements MicroApp {
   IInjectionContainer get injection => MicroAppHomeInjection();
 
   @override
-  void Function() get createListener => () {};
+  ValueGetter<StreamSubscription<IEventBus>> get createListenerNavigation =>
+      EventBus.listen((event) {});
 }

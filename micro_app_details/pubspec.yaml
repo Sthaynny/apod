@@ -17,6 +17,8 @@ dependencies:
     path: ../micro_dependency
   micro_common:
     path: ../micro_common
+  event_bus:
+    path: ../event_bus
 
 dev_dependencies:
   flutter_test:

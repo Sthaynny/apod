@@ -1,3 +1,7 @@
+import 'dart:async';
+
+import 'package:event_bus/event_bus.dart';
+import 'package:flutter/material.dart';
 import 'package:micro_core/app/injenction_container.dart';
 
 import 'micro_core_utils.dart';
@@ -9,5 +13,7 @@ abstract class MicroApp {
 
   IInjectionContainer? get injection;
 
-  void Function() get createListener;
+  ValueGetter<StreamSubscription<IEventBus>> get createListenerNavigation;
+
+
 }

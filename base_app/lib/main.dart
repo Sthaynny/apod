@@ -14,11 +14,26 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget with BaseApp {
-  MyApp({Key? key}) : super(key: key) {
+class MyApp extends StatefulWidget {
+  MyApp({Key? key}) : super(key: key) {}
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with BaseApp {
+  @override
+  void initState() {
     registerRouters();
     registerListener();
     init(microApps);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    cancelListener();
+    super.dispose();
   }
 
   @override
