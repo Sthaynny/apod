@@ -13,7 +13,10 @@ abstract class MicroApp {
 
   IInjectionContainer? get injection;
 
-  ValueGetter<StreamSubscription<IEventBus>> get createListenerNavigation;
+  ValueSetter<IEventBus> get myEventsNatigator;
+}
 
-
+extension MicroAppExt on MicroApp {
+  ValueGetter<StreamSubscription<IEventBus>> get createListenerNavigation =>
+      EventBus.listen(myEventsNatigator);
 }

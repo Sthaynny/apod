@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:event_bus/event_bus.dart';
 import 'package:flutter/material.dart';
 import 'package:micro_app_details/app/presentation/details_screen.dart';
@@ -21,17 +19,14 @@ class MicroAppDetailsResolver implements MicroApp {
         Routes.details: (context, args) =>
             DetailsScreen(apod: args as EventDatails),
       };
-
+ 
   @override
-  ValueGetter<StreamSubscription<IEventBus>> get createListenerNavigation =>
-      EventBus.listen(
-        (event) {
-          if (event is EventDatails) {
+  ValueSetter<IEventBus> get myEventsNatigator => (event) {
+    if (event is EventDatails) {
             navigationKey.currentState?.pushNamed(
               Routes.details,
               arguments: event,
             );
           }
-        },
-      );
+  };
 }

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:event_bus/event_bus.dart';
 import 'package:flutter/src/foundation/basic_types.dart';
 import 'package:micro_common/app/micro_common_injection.dart';
@@ -18,6 +16,5 @@ class MicroCommonResolver implements MicroApp {
   Map<String, WidgetBuilderArgs> get routes => {};
 
   @override
-  ValueGetter<StreamSubscription<IEventBus>> get createListenerNavigation =>
-      EventBus.listen((event) {});
+  ValueSetter<IEventBus> get myEventsNatigator => (event) {};
 }
