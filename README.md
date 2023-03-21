@@ -82,4 +82,4 @@ Create a <a href="https://github.com/Sthaynny/apod/issues">new issue report</a>,
 This project is under the [MIT License](./LICENSE) |
 Made with 💖 by [Igor Sthaynny](https://www.linkedin.com/in/igor-sthaynny/).
 
-      
+         
